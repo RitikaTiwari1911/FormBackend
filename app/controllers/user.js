@@ -6,6 +6,7 @@
  * @since        19/08/2021
 ----------------------------------------------------------------------------------------------- */
 const userService = require('../service/user')
+const { validation } = require('../middleware/validation')
 class UserController{
     /**
      * @description contains the API for registration
@@ -15,7 +16,10 @@ class UserController{
      */
     registerUser = (req, res) =>{
         try{
-            console.log("controller", req.body)
+            const userValidation = validation.validate(req.body)
+            if(userValidation.error){
+                res.status(400).send({message:userValidation.error.details[0].message})
+            }
             const userDetails = {
                 firstName: req.body.firstName,
                 lastName: req.body.lastName,
