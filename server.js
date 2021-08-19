@@ -15,6 +15,9 @@ app.get('/',(req,res) => {
     res.json({"message":"Welcome to the Registration page"});
 });
 
+//Requiring routes
+require('./app/routes/routes.js')(app);
+
 //listen for request
 app.listen(process.env.PORT,()=>{
     console.log(`Server is listening`);
