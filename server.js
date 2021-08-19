@@ -1,10 +1,13 @@
 const express = require('express');
 require ('dotenv').config();
 const app  = express();
+var cors = require('cors')
 
 //middleware has access to req and res
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
+
+app.use(cors())
 
 //configuring the database
 const dbConnect = require('./config/database.config');
