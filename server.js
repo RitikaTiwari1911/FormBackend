@@ -6,6 +6,10 @@ const app  = express();
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 
+//configuring the database
+const dbConnect = require('./config/database.config');
+dbConnect();
+
 //define a simple route
 app.get('/',(req,res) => {
     res.json({"message":"Welcome to the Registration page"});
