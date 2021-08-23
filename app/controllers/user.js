@@ -47,6 +47,11 @@ class UserController{
 
     }
 
+    /**
+     * @description contains request body for user login
+     * @param {*} req 
+     * @param {*} res 
+     */
     userLogin = (req, res) =>{
         try{
             const userCredential = {

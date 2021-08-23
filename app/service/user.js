@@ -25,6 +25,12 @@ class userService{
         }
     }
 
+    /**
+     * @description business logib for login
+     * @param {*} userCredential 
+     * @param {*} callback 
+     * @returns 
+     */
     login = (userCredential, callback) =>{
         try{
             userModel.login(userCredential, (error, data) => {

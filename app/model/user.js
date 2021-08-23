@@ -64,6 +64,12 @@ class userModel{
         }
     }
 
+    /**
+     * @description mongoose method for login
+     * @param {*} userCredential 
+     * @param {*} callback 
+     * @returns 
+     */
     login = (userCredential, callback) => {
         try{
             user.findOne({email: userCredential.email}, (error, data) => {
