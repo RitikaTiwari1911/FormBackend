@@ -2,7 +2,7 @@
     "registerUserData":{
         "firstName":"Diksha",
         "lastName":"Mishra",
-        "email":"dikshaa.mishra1234@gmail.com",
+        "email":"dikshaa.mishra012034@gmail.com",
         "password":"diksha1234"
     },
     "registerUserDataNeg":{
@@ -22,5 +22,13 @@
         "lastName":"M",
         "email":"mishra@gmail.com",
         "password":"diksha1234"
+    },
+    "loginData":{
+        "email": "string123@gmail.com",
+        "password": "string1234"  
+    },
+    "loginDataNeg":{
+        "email": "string1@gmail.com",
+        "password": "string1234"
     }
 }
