@@ -1,0 +1,26 @@
+{
+    "registerUserData":{
+        "firstName":"Diksha",
+        "lastName":"Mishra",
+        "email":"dikshaa.mishra1234@gmail.com",
+        "password":"diksha1234"
+    },
+    "registerUserDataNeg":{
+        "firstName":"Diksha",
+        "lastName":"Mishra",
+        "email":"diksha123@gmail.com",
+        "password":"diksha1234"
+    },
+    "invalidFirstName":{
+        "firstName":"D",
+        "lastName":"Mishra",
+        "email":"mishra@gmail.com",
+        "password":"diksha1234"
+    },
+    "invalidLastName":{
+        "firstName":"Diksha",
+        "lastName":"M",
+        "email":"mishra@gmail.com",
+        "password":"diksha1234"
+    }
+}
