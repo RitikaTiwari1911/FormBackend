@@ -63,6 +63,19 @@ class userModel{
             return callback(error, null)
         }
     }
+
+    login = (userCredential, callback) => {
+        try{
+            user.findOne({email: userCredential.email}, (error, data) => {
+                if(error){
+                    return callback(error, null)
+                }
+                return callback(null, data)
+            })   
+        }catch(error){
+            return callback(error, null)
+        }
+    }
 }
 
 module.exports = new userModel();

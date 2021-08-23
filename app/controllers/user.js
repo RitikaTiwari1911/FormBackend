@@ -46,5 +46,31 @@ class UserController{
         }
 
     }
+
+    userLogin = (req, res) =>{
+        try{
+            const userCredential = {
+                email: req.body.email,
+                password: req.body.password
+            }
+            userService.login(userCredential, (error, data)=>{
+                return((error) ? 
+                    res.status(400).send({
+                        success: false,
+                        message: "Incorrect credentials"
+                    }):
+                    res.status(200).send({
+                        success: true,
+                        message: "You are successfully logged in!",
+                        data
+                }))
+            })
+        }catch(error){
+            res.status(500).send({
+                success: false,
+                message: error
+            })
+        }
+    }
 }
 module.exports = new UserController();

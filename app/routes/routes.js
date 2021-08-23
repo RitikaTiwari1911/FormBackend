@@ -10,4 +10,7 @@ module.exports = (app) =>{
 
     //registering a new user
     app.post('/registerUser', controller.registerUser);
+
+    //user login
+    app.post('/userLogin', controller.userLogin);
 }

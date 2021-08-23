@@ -6,6 +6,7 @@
  * @since        19/08/2021
 ----------------------------------------------------------------------------------------------------------- */
 const userModel = require('../model/user');
+const helper = require('../middleware/helper')
 
 class userService{
     /**
@@ -18,6 +19,22 @@ class userService{
         try{
             userModel.create(userDetails, (error, data) => {
                 return error ? callback(error, null) : callback(null, data)
+            })
+        }catch(error){
+            return callback(error, null)
+        }
+    }
+
+    login = (userCredential, callback) =>{
+        try{
+            userModel.login(userCredential, (error, data) => {
+                if(!data){
+                    return callback("No input!", null)
+                }
+                if(helper.checkByBcrypt(userCredential.password, data.password)){
+                    const token = helper.generateToken(userCredential);
+                    return (token) ? callback(null, token) : callback ("Incorrect password!", null)
+                }
             })
         }catch(error){
             return callback(error, null)
